@@ -1,0 +1,41 @@
+package uniandes.edu.co.proyecto.controllers;
+import uniandes.edu.co.proyecto.dtos.UsuarioDTO;
+import uniandes.edu.co.proyecto.dtos.Mappers;
+import uniandes.edu.co.proyecto.entities.Usuario;
+import uniandes.edu.co.proyecto.services.UsuarioService;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import static uniandes.edu.co.proyecto.dtos.Mappers.mapList;
+
+@RestController
+@RequestMapping("/api/usuarios")
+public class UsuarioController {
+  private final UsuarioService service;
+  public UsuarioController(UsuarioService service) { this.service = service; }
+
+  @PostMapping
+  public UsuarioDTO crear(@RequestBody UsuarioDTO dto) { 
+    Usuario saved = service.crear(Mappers.toEntity(dto));
+    return Mappers.toDTO(saved);
+  }
+
+  @PutMapping("/{id}")
+  public UsuarioDTO actualizar(@PathVariable Long id, @RequestBody UsuarioDTO dto){
+    Usuario updated = service.actualizar(id, Mappers.toEntity(dto));
+    return Mappers.toDTO(updated);
+  }
+
+  @DeleteMapping("/{id}")
+  public void eliminar(@PathVariable Long id) { service.eliminar(id); }
+
+  @GetMapping("/{id}")
+  public UsuarioDTO buscar(@PathVariable Long id) { 
+    return Mappers.toDTO(service.buscar(id)); 
+  }
+
+  @GetMapping
+  public List<UsuarioDTO> listar() { 
+    return mapList(service.listar(), Mappers::toDTO);
+  }
+}
+
