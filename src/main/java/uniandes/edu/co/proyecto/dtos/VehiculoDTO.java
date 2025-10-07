@@ -1,12 +1,14 @@
 package uniandes.edu.co.proyecto.dtos;
-import lombok.*;
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+import lombok.Data;
+
+@Data
 public class VehiculoDTO {
-  private String placa;
+  private Long id;
+  private String modelo;
   private String marca;
-  private Integer modelo;
-  private Integer capacidad;
-  private String tipoVehiculo;
+  private String placa;
+  private String color;
   private String ciudadExpPlaca;
+  private int capacidad;
 }
 

@@ -1,11 +1,14 @@
 package uniandes.edu.co.proyecto.dtos;
-import lombok.*;
 import java.time.LocalDate;
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-public class UsuarioServicioDTO {
+
+import lombok.Data;
+
+@Data
+public class UsuarioServicioDTO extends UsuarioDTO {
   private Long id;
-  private Long cedulaUsuario;
-  private String numTarjeta;
-  private LocalDate fechaExpiracion;
-  private String franquicia;
+  private String nombreTarjeta;
+  private String fechaVencimiento;
+  private String cvc;
+  private String numerTarjeta;
+  private boolean disponible;
 }

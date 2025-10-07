@@ -1,8 +1,8 @@
 package uniandes.edu.co.proyecto.dtos;
-import lombok.*;
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+import lombok.Data;
+
+@Data
 public class CiudadDTO {
+  private Long id;
   private String nombre;
-  private String departamento;
-  private String pais;
 }

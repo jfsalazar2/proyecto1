@@ -1,12 +1,9 @@
 package uniandes.edu.co.proyecto.dtos;
-import lombok.*;
-import java.time.LocalDateTime;
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+import lombok.Data;
+
+@Data
 public class ResenaDTO {
   private Long id;
-  private Long cedulaAutor;
-  private Long cedulaReceptor;
-  private Integer calificacion;
-  private String comentario;
-  private LocalDateTime fecha;
+  private int calificacion;
+  private String comentarios;
 }

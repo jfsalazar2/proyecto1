@@ -1,12 +1,14 @@
 package uniandes.edu.co.proyecto.dtos;
-import lombok.*;
-import java.time.LocalDateTime;
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+
 public class DisponibilidadDTO {
   private Long id;
-  private Long cedulaConductor;
-  private String placaVehiculo;
-  private String dia;
-  private LocalDateTime horaInicio;
-  private LocalDateTime horaFin;
+  private List<String> dias;
+  private String horario;
+  private String tipoServicio;
 }

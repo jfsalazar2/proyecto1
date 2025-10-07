@@ -1,14 +1,19 @@
 package uniandes.edu.co.proyecto.dtos;
-import lombok.*;
-import java.time.LocalDateTime;
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+import java.sql.Date;
+import lombok.Data;
+
+@Data
 public class ServicioDTO {
   private Long id;
-  private Long cedulaConductor;
-  private Long cedulaPasajero;
-  private String placaVehiculo;
   private String tipo;
-  private LocalDateTime fecha;
-  private Double longitudKm;
-  private String ciudad;
+  private String horaInicio;
+  private int tarifaKm;
+  private String horaFin;
+  private Date fecha;
+  private int longitudServicio;
+  private boolean estado;
+  private int costo;
+  private int duracion;
+  
+
 }

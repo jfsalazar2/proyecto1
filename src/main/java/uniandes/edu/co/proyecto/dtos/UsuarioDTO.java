@@ -1,10 +1,11 @@
 package uniandes.edu.co.proyecto.dtos;
-import lombok.*;
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+import lombok.Data;
+
+@Data
 public class UsuarioDTO {
-  private Long cedula;
+  private Long id;
   private String nombre;
-  private String email;
+  private String correo;
   private String telefono;
-  private String rol;
+  private String cedula;
 }

@@ -1,8 +1,10 @@
 package uniandes.edu.co.proyecto.dtos;
 
-import lombok.*;
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-public class DomicilioDTO {
-  private Long idServicio;
-  private String descripcion;
+import lombok.Data;
+
+@Data
+
+public class DomicilioDTO extends ServicioDTO {
+  private Long id;
+ 
 }

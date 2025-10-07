@@ -1,8 +1,10 @@
 package uniandes.edu.co.proyecto.dtos;
-import lombok.*;
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-public class MercanciaDTO {
-  private Long idServicio;
-  private Double pesoKg;
-  private Double volumenM3;
+import lombok.Data;
+
+@Data
+
+public class MercanciaDTO extends ServicioDTO {
+  private Long id;
+  private String descripcion;
+
 }
