@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PuntoGeograficoService {
+
+    
     private final PuntoGeograficoRepository repo;
     private final CiudadRepository ciudadRepo;
 

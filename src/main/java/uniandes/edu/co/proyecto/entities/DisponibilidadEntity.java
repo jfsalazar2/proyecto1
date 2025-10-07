@@ -1,7 +1,6 @@
 package uniandes.edu.co.proyecto.entities;
 import jakarta.persistence.*;
 import lombok.Data;
-import jakarta.persistence.ManyToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 import java.util.List;
@@ -9,6 +8,10 @@ import java.util.List;
 @Data
 @Entity
 public class DisponibilidadEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;  
 
     @ElementCollection
     private List<String> dias;     

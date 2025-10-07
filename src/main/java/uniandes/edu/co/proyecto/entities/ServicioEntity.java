@@ -12,6 +12,10 @@ import java.time.LocalTime;
 
 public abstract class ServicioEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;  
+
 
     
     private String tipo;                 // (p.ej. "Transporte", "Domicilio", "Mercancia")
@@ -46,6 +50,9 @@ public abstract class ServicioEntity {
     @ManyToOne
     private PuntoGeograficoEntity origen;
 
+    @PodamExclude
+    @ManyToOne
+    private PuntoGeograficoEntity destino;
     
 
     

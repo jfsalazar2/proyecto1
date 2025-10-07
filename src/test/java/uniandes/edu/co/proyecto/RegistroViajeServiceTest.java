@@ -6,7 +6,7 @@ import uniandes.edu.co.proyecto.repositories.UsuarioConductorRepository;
 import uniandes.edu.co.proyecto.services.RegistroViajeService;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
+
 import org.mockito.Mockito;
 
 import java.time.LocalTime;

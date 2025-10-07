@@ -11,6 +11,10 @@ import uniandes.edu.co.proyecto.entities.enums.TipoVehiculo;
 @Entity
 public class VehiculoEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;  
+
     
 
     @Enumerated(EnumType.STRING)
