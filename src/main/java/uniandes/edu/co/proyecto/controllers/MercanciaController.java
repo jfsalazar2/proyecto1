@@ -1,7 +1,7 @@
 package uniandes.edu.co.proyecto.controllers;
 import uniandes.edu.co.proyecto.dtos.MercanciaDTO;
 import uniandes.edu.co.proyecto.dtos.Mappers;
-import uniandes.edu.co.proyecto.entities.Mercancia;
+import uniandes.edu.co.proyecto.entities.MercanciaEntity;
 import uniandes.edu.co.proyecto.services.MercanciaService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -15,13 +15,13 @@ public class MercanciaController {
 
   @PostMapping
   public MercanciaDTO crear(@RequestBody MercanciaDTO dto) { 
-    Mercancia saved = service.crear(Mappers.toEntity(dto));
+    MercanciaEntity saved = service.crear(Mappers.toEntity(dto));
     return Mappers.toDTO(saved);
   }
 
   @PutMapping("/{id}")
   public MercanciaDTO actualizar(@PathVariable Long id, @RequestBody MercanciaDTO dto){
-    Mercancia updated = service.actualizar(id, Mappers.toEntity(dto));
+    MercanciaEntity updated = service.actualizar(id, Mappers.toEntity(dto));
     return Mappers.toDTO(updated);
   }
 

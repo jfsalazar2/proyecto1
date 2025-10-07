@@ -1,7 +1,7 @@
 package uniandes.edu.co.proyecto.controllers;
 import uniandes.edu.co.proyecto.dtos.DisponibilidadDTO;
 import uniandes.edu.co.proyecto.dtos.Mappers;
-import uniandes.edu.co.proyecto.entities.Disponibilidad;
+import uniandes.edu.co.proyecto.entities.DisponibilidadEntity;
 import uniandes.edu.co.proyecto.services.DisponibilidadService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -15,13 +15,13 @@ public class DisponibilidadController {
 
   @PostMapping
   public DisponibilidadDTO crear(@RequestBody DisponibilidadDTO dto) { 
-    Disponibilidad saved = service.crear(Mappers.toEntity(dto));
+    DisponibilidadEntity saved = service.crear(Mappers.toEntity(dto));
     return Mappers.toDTO(saved);
   }
 
   @PutMapping("/{id}")
   public DisponibilidadDTO actualizar(@PathVariable Long id, @RequestBody DisponibilidadDTO dto){
-    Disponibilidad updated = service.actualizar(id, Mappers.toEntity(dto));
+    DisponibilidadEntity updated = service.actualizar(id, Mappers.toEntity(dto));
     return Mappers.toDTO(updated);
   }
 

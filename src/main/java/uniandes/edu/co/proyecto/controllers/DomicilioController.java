@@ -1,7 +1,7 @@
 package uniandes.edu.co.proyecto.controllers;
 import uniandes.edu.co.proyecto.dtos.DomicilioDTO;
 import uniandes.edu.co.proyecto.dtos.Mappers;
-import uniandes.edu.co.proyecto.entities.Domicilio;
+import uniandes.edu.co.proyecto.entities.DomicilioEntity;
 import uniandes.edu.co.proyecto.services.DomicilioService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -15,13 +15,13 @@ public class DomicilioController {
 
   @PostMapping
   public DomicilioDTO crear(@RequestBody DomicilioDTO dto) { 
-    Domicilio saved = service.crear(Mappers.toEntity(dto));
+    DomicilioEntity saved = service.crear(Mappers.toEntity(dto));
     return Mappers.toDTO(saved);
   }
 
   @PutMapping("/{id}")
   public DomicilioDTO actualizar(@PathVariable Long id, @RequestBody DomicilioDTO dto){
-    Domicilio updated = service.actualizar(id, Mappers.toEntity(dto));
+    DomicilioEntity updated = service.actualizar(id, Mappers.toEntity(dto));
     return Mappers.toDTO(updated);
   }
 

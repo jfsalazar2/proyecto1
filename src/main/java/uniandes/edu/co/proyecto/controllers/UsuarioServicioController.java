@@ -1,7 +1,7 @@
 package uniandes.edu.co.proyecto.controllers;
 import uniandes.edu.co.proyecto.dtos.UsuarioServicioDTO;
 import uniandes.edu.co.proyecto.dtos.Mappers;
-import uniandes.edu.co.proyecto.entities.UsuarioServicio;
+import uniandes.edu.co.proyecto.entities.UsuarioServicioEntity;
 import uniandes.edu.co.proyecto.services.UsuarioServicioService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -15,13 +15,13 @@ public class UsuarioServicioController {
 
   @PostMapping
   public UsuarioServicioDTO crear(@RequestBody UsuarioServicioDTO dto) { 
-    UsuarioServicio saved = service.crear(Mappers.toEntity(dto));
+    UsuarioServicioEntity saved = service.crear(Mappers.toEntity(dto));
     return Mappers.toDTO(saved);
   }
 
   @PutMapping("/{id}")
   public UsuarioServicioDTO actualizar(@PathVariable Long id, @RequestBody UsuarioServicioDTO dto){
-    UsuarioServicio updated = service.actualizar(id, Mappers.toEntity(dto));
+    UsuarioServicioEntity updated = service.actualizar(id, Mappers.toEntity(dto));
     return Mappers.toDTO(updated);
   }
 

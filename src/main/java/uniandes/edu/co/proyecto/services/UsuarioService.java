@@ -1,6 +1,6 @@
 package uniandes.edu.co.proyecto.services;
 import uniandes.edu.co.proyecto.repositories.UsuarioRepository;
-import uniandes.edu.co.proyecto.entities.Usuario;
+import uniandes.edu.co.proyecto.entities.UsuarioEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -8,12 +8,12 @@ import java.util.List;
 public class UsuarioService {
   private final UsuarioRepository repo;
   public UsuarioService(UsuarioRepository repo) { this.repo = repo; }
-  public Usuario crear(Usuario e) { return repo.save(e); }
-  public Usuario actualizar(Long id, Usuario e) { 
+  public UsuarioEntity crear(UsuarioEntity e) { return repo.save(e); }
+  public UsuarioEntity actualizar(Long id, UsuarioEntity e) { 
     
     return repo.save(e); 
   }
   public void eliminar(Long id) { repo.deleteById(id); }
-  public Usuario buscar(Long id) { return repo.findById(id).orElse(null); }
-  public List<Usuario> listar() { return repo.findAll(); }
+  public UsuarioEntity buscar(Long id) { return repo.findById(id).orElse(null); }
+  public List<UsuarioEntity> listar() { return repo.findAll(); }
 }

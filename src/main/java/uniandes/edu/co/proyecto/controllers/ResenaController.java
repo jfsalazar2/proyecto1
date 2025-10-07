@@ -1,7 +1,7 @@
 package uniandes.edu.co.proyecto.controllers;
 import uniandes.edu.co.proyecto.dtos.ResenaDTO;
 import uniandes.edu.co.proyecto.dtos.Mappers;
-import uniandes.edu.co.proyecto.entities.Resena;
+import uniandes.edu.co.proyecto.entities.ResenaEntity;
 import uniandes.edu.co.proyecto.services.ResenaService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -15,13 +15,13 @@ public class ResenaController {
 
   @PostMapping
   public ResenaDTO crear(@RequestBody ResenaDTO dto) { 
-    Resena saved = service.crear(Mappers.toEntity(dto));
+    ResenaEntity saved = service.crear(Mappers.toEntity(dto));
     return Mappers.toDTO(saved);
   }
 
   @PutMapping("/{id}")
   public ResenaDTO actualizar(@PathVariable Long id, @RequestBody ResenaDTO dto){
-    Resena updated = service.actualizar(id, Mappers.toEntity(dto));
+    ResenaEntity updated = service.actualizar(id, Mappers.toEntity(dto));
     return Mappers.toDTO(updated);
   }
 
