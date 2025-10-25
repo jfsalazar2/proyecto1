@@ -1,13 +1,22 @@
 package uniandes.edu.co.proyecto.repositories;
-import uniandes.edu.co.proyecto.entities.PuntoGeograficoEntity;
-import uniandes.edu.co.proyecto.entities.CiudadEntity;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import uniandes.edu.co.proyecto.entities.CiudadEntity;
+import uniandes.edu.co.proyecto.entities.PuntoGeograficoEntity;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 @Repository
 public interface PuntoGeograficoRepository extends JpaRepository<PuntoGeograficoEntity, Long> {
-    List<PuntoGeograficoEntity> findByCiudadAndNombreContainingIgnoreCase(CiudadEntity ciudad, String nombre);
-    List<PuntoGeograficoEntity> findByNombreContainingIgnoreCase(String nombre);
+
+    boolean existsByCiudadAndNombreIgnoreCase(CiudadEntity ciudad, String nombre);
+
+    boolean existsByCiudadAndDireccionIgnoreCase(CiudadEntity ciudad, String direccion);
+
+    
+    boolean existsByCiudadIdAndLatAndLng(Long ciudadId, BigDecimal lat, BigDecimal lng);
+
+    
 }
+

@@ -1,16 +1,21 @@
 package uniandes.edu.co.proyecto.repositories;
-import uniandes.edu.co.proyecto.entities.ResenaEntity;
-import uniandes.edu.co.proyecto.entities.UsuarioConductorEntity;
-import uniandes.edu.co.proyecto.entities.ServicioEntity;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
+import uniandes.edu.co.proyecto.entities.ResenaEntity;
 
 @Repository
 public interface ResenaRepository extends JpaRepository<ResenaEntity, Long> {
-    List<ResenaEntity> findByConductorResenado(UsuarioConductorEntity conductor);
-    List<ResenaEntity> findByServicio(ServicioEntity servicio);
-    List<ResenaEntity> findByCalificacionBetween(Integer min, Integer max);
+
+    
+    boolean existsByServicioIdAndAutorClienteIdAndConductorResenadoId(Long servicioId,
+                                                                       Long autorClienteId,
+                                                                       Long conductorResenadoId);
+
+    
+    boolean existsByServicioIdAndAutorConductorIdAndClienteResenadoId(Long servicioId,
+                                                                       Long autorConductorId,
+                                                                       Long clienteResenadoId);
 }
+
 
